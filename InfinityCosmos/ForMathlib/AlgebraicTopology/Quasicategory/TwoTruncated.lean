@@ -1093,7 +1093,7 @@ lemma pi_map_π (e : ∀ j, Edge ((Pi.π F j).app _ x) ((Pi.π F j).app _ y)) (j
   rw [pi_π_app_piObjIso_inv]
 
 @[simp]
-lemma pi_map (e : Edge x y) :
+lemma pi_eta (e : Edge x y) :
     pi (fun j ↦ e.map (Pi.π F j)) = e := by
   ext
   apply Concrete.Pi.map_ext F ((evaluation _ _).obj _)
