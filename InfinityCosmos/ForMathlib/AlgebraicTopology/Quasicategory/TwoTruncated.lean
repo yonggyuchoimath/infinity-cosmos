@@ -1306,6 +1306,10 @@ instance homotopyCategory₂Functor_preservesProducts :
     ⟨preservesLimit_of_iso_diagram homotopyCategory₂Functor Discrete.natIsoFunctor.symm⟩
   exact preservesLimitsOfShape_of_equiv (Discrete.equivalence (equivShrink.{u} J).symm) _
 
+instance homotopyCategory₂Functor_preservesFiniteProducts :
+    PreservesFiniteProducts homotopyCategory₂Functor.{u} where
+  preserves _ := inferInstance
+
 end PreservesProducts
 
 end SSet.Quasicategory₂
@@ -1406,6 +1410,10 @@ instance hoFunctor_preservesProduct :
 instance hoFunctor_preservesProducts :
     PreservesLimitsOfShape (Discrete J) (ObjectProperty.ι Quasicategory.{u} ⋙ hoFunctor) where
   preservesLimit := preservesLimit_of_iso_diagram _ Discrete.natIsoFunctor.symm
+
+instance hoFunctor_preservesFiniteProducts :
+    PreservesFiniteProducts (ObjectProperty.ι Quasicategory.{u} ⋙ hoFunctor) where
+  preserves _ := inferInstance
 
 end QCat
 
