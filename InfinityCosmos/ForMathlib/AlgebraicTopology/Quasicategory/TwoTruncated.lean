@@ -981,6 +981,11 @@ def mapHomotopyCategory₂ (F : A ⟶ B) :
   map_comp := mapHomotopyCategory₂.map_comp F
 
 @[simp]
+lemma mapHomotopyCategory₂_obj (F : A ⟶ B) (x : A _⦋0⦌₂) :
+    (mapHomotopyCategory₂ F).obj (HomotopyCategory₂.mk x) = HomotopyCategory₂.mk (F.app _ x) :=
+  rfl
+
+@[simp]
 lemma mapHomotopyCategory₂_homMk (F : A ⟶ B) {x y : A _⦋0⦌₂} (e : Truncated.Edge x y) :
     (mapHomotopyCategory₂ F).map (HomotopyCategory₂.homMk e) = HomotopyCategory₂.homMk (e.map F) :=
   rfl
