@@ -856,7 +856,6 @@ theorem HomotopyCategory₂.lift_unique' {C : Type u} [Category.{u} C]
   (statement := /--
   If $A$ is a quasi-category then its \textbf{homotopy category} $\ho{A}$ is isomorphic to the
   homotopy category of its underlying 2-truncated quasi-category, as just described.
-  This isomorphism is natural in $A$.
   -/)
   (proof := /--
   Given a 2-truncated quasi-category $A$, we can construct a natural isomorphism between its
