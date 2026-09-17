@@ -1196,6 +1196,9 @@ noncomputable instance inclusionCreatesProducts :
 instance hasProductsOfShape : HasLimitsOfShape (Discrete J) QCat₂.{u} :=
   hasLimitsOfShape_of_hasLimitsOfShape_createsLimitsOfShape (ObjectProperty.ι Quasicategory₂)
 
+instance hasFiniteProducts : HasFiniteProducts QCat₂.{u} :=
+  hasFiniteProducts_of_hasProducts.{u} _
+
 end SSet.QCat₂
 
 namespace SSet.Quasicategory₂
@@ -1397,6 +1400,9 @@ variable [Small.{u} J]
 
 instance hasProductsOfShape : HasLimitsOfShape (Discrete J) QCat.{u} where
   has_limit D := hasLimit_of_iso (Discrete.natIsoFunctor (F := D)).symm
+
+instance hasFiniteProducts : HasFiniteProducts QCat.{u} :=
+  hasFiniteProducts_of_hasProducts.{u} _
 
 instance inclusion_preservesProducts :
     PreservesLimitsOfShape (Discrete J) (ObjectProperty.ι Quasicategory.{u}) where
